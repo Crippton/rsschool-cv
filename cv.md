@@ -1,0 +1,48 @@
+# Dzianis Shalkevich
+---
+## My contacts:
+  - **Email:** <crippton@gmail.com>
+  - **LinkedIn:** [Denis Shalkevich](https://www.linkedin.com/in/denis-shalkevich-b8a090ba/)
+  - **Phone:** [+375336903061](tel:+375336903061)
+## About me:
+>I have good self-motivation and troubleshooting skills, decisive and logical, ability for research, communicative and **open for a new experience**. I'm an excellent team-player. 
+
+## My key skills:
+> JavaScript, HTLM, CSS, git
+> Visual Studio Code
+> Photoshop
+
+## Experience
+>I have 5 years product expirince as a software engineer in tests. For now I'm working on Senior position.
+
+## Example of my code:
+
+```javascript
+//Complete the function to return true if the two arguments given are anagrams of each other; return false otherwise.
+
+var isAnagram = function(test, original) {
+  let string = test.toLowerCase();
+  let boolen = true;
+  let counter = 0;
+  let original1 = original.toLowerCase();
+  if(test.length === original.length){
+    for ( let i = 0; i < original.length; i += 1){
+      if(original1.includes(string[i]) === true) {
+        counter = counter += 1;
+      } else {
+        boolen = false;
+      }
+      if(counter === original.length){
+        boolen = true;
+      }
+    }
+    return boolen;
+  } else {
+    return false;
+  }
+  
+};
+```
+
+## English skills:
+>  I think that I have **A2 level** of English language. I try to use it every day: read technical documentations, books and articles, listen podcasts, watch  movies and youtube videos. Also I got courses at [KESPA](https://kespa.ru/).
