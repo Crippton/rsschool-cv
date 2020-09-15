@@ -11,6 +11,7 @@
 >I have good self-motivation and troubleshooting skills, decisive and logical, ability for research, communicative and **open for a new experience**. I'm an excellent team-player. 
 
 ## My key skills:
+
 | `Code:` | JavaScript, HTML, CSS, git |
 | ---------------- | ----------- | ----------- |
 | `IDE:` | Visual Studio Code |
