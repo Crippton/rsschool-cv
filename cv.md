@@ -44,5 +44,3 @@ var isAnagram = function(test, original) {
 };
 ```
 
-## English skills:
->  I think that I have **A2 level** of English language. I try to use it every day: read technical documentations, books and articles, listen podcasts, watch  movies and youtube videos. Also I got courses at [KESPA](https://kespa.ru/).
