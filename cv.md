@@ -11,7 +11,7 @@
 
 ## My key skills:
 |`Code:`| JavaScript, HTML, CSS, git|
-|---|---|
+| ---------- |--------- |
 |`IDE:`| Visual Studio Code|
 |`Graphic processor:` | Photoshop|
 
