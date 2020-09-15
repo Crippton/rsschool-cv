@@ -10,9 +10,10 @@
 >I have good self-motivation and troubleshooting skills, decisive and logical, ability for research, communicative and **open for a new experience**. I'm an excellent team-player. 
 
 ## My key skills:
-> JavaScript, HTML, CSS, git
-> Visual Studio Code
-> Photoshop
+|`Code:`| JavaScript, HTML, CSS, git|
+---|---|
+|`IDE:`| Visual Studio Code|
+|`Graphic processor:` | Photoshop|
 
 ## Experience
 >I have 5 years product expirince as a software engineer in tests. For now I'm working on Senior position.
