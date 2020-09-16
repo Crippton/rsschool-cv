@@ -1,0 +1,39 @@
+body {
+    background-color: rgba(236, 236, 65, 0.096);
+    font-family: Arial,serif-serif;
+    font-size: 16px;
+    margin: auto;
+    margin-right: auto;
+}
+
+main {
+    display: block;
+}
+
+td {
+    border: 1px solid black;
+    padding: 10px 10px;
+}
+
+table {
+    border-spacing: 5px;
+    
+    display: table;
+    border-collapse: collapse;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: whitesmoke;
+}
+
+img {
+    border-radius: 50%;
+    /* display: block; */
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    position: absolute;
+    top: 5px;
+    left: 500px;
+}
