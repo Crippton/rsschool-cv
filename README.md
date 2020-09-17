@@ -1,1 +1,1 @@
-https://crippton.github.io/rsschool-cv/cv
+https://crippton.github.io/rsschool-cv/
