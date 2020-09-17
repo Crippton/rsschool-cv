@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Resume Dzianis Shalkevich | HTML, CSS & Git Basics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class='contacts'>
+        <div id='info'>
+            <div id='Person' itemscope itemtype='http://schema.org/Person'>
+                <h1><span itemprop='name'>Dzianis Shalkevich</span></h1>
+                <h3><span itemprop='jobTitle'>JavaScript Developer</span></h3>
+                <h2>My contacts: </h2>
+                <ul>
+                    <li>
+                        <p itemprop='Email'><b>Email: </b>crippton@gmail.com</p>
+                    </li>
+                    <li>
+                        <p><b>LinkedIn: </b> <a href='https://www.linkedin.com/in/denis-shalkevich-b8a090ba/'
+                                itemprop='url'>Denis Shalkevich</a></p>
+                    </li>
+                    <li>
+                        <p><b>Phone: </b> <a href='tel:+375336903061' itemprop='telephone'>+375336903061</a></p>
+                    </li>
+                </ul>
+                <div id='photo'>
+                    <img src='https://avatars0.githubusercontent.com/u/12560265?s=460&u=928035af8bf49df5ec13ce5aecf3ee6976a47c64&v=4'
+                        alt='MyPhoto' itemprop='image' />
+                </div>
+            </div>
+            <address id='location' itemscope itemtype='http://schema.org/PostalAddress'>
+
+                <span><b>Location: </b></span>
+                <span itemprop='addressLocality'>Minsk</span>,
+                <span itemprop='addressCountry'>Belarus</span>
+            </address>
+        </div>
+    </main>
+    <section id='about'>
+        <h2>About me:</h2>
+
+        <p class='text'>I'm an excellent team-player. I have good self-motivation and troubleshooting skills,
+            decisive and logical, ability for research, communicative and <mark>I'm open for a new experience</mark>.
+        </p>
+    </section>
+
+    <section id='keySkills'>
+        <h2>My key skills:</h2>
+        <table>
+            <tr>
+                <td><b>Code:</b></td>
+                <td>JavaScript, HTML, CSS, git</td>
+            </tr>
+            <tr>
+                <td><b>IDE:</b></td>
+                <td>Visual Studio Code</td>
+            </tr>
+            <tr>
+                <td><b>Graphic processor:</b></td>
+                <td>Photoshop</td>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <h2>Experience:</h2>
+        <p class='text'>I have 5 years product expirince as a software engineer in tests.
+            For now I'm working on Senior position.</p>
+    </section>
+    <section>
+        <h2>Example of my code:</h2>
+    <pre>
+        <code class="code">
+//Complete the function to return true if the two arguments 
+given are anagrams of each other; return false otherwise.
+
+var isAnagram = function(test, original) {
+  let testLowerCase = test.toLowerCase();
+  let boolen = true;
+  let counter = 0;
+  let originalLoverCase = original.toLowerCase();
+  if(test.length === original.length){
+    for ( let i = 0; i < original.length; i += 1){
+      if(originalLowerCase.includes(testLowerCase[i]) === true) {
+        counter = counter += 1;
+      } else {
+        boolen = false;
+      }
+      if(counter === original.length){
+        boolen = true;
+      }
+    }
+    return boolen;
+  } else {
+    return false;
+  }
+};
+        </code>
+    </pre>
+    </section>
+    <section>
+        <h2>English skills:</h2>
+        <p class='text'>I think that I have <mark>A2 level</mark> of English language.
+            I try to use it every day: read technical documentations, books and articles,
+            listen podcasts, watch movies and youtube videos.
+            Also I got courses at <a href='https://kespa.ru/'>KESPA</a>.</p>
+    </section>
+
+
+</body>
+
+</html>
