@@ -37,6 +37,7 @@ function addZero(n) {
     return (parseInt(n, 10) < 10 ? '0' : '') + n;
 }
 
+
 function setGreet() {
     let today = new Date(),
         hour = today.getHours();
