@@ -19,6 +19,8 @@ const time = document.getElementById('time'),
 
 let backgrnds = [];
 let timeOfDay = 'default';
+let backgrndChanger = new Date().getHours();
+let temp_wait = null;
 
 let options = {
     weekday: 'long',
@@ -63,10 +65,10 @@ function addZero(n) {
 
 function setGreetBgrnd() {
     let today = new Date(),
-        hour = today.getHours(),
-        temp_hour = null;
-    if (temp_hour === null) {
-        temp_hour = hour;
+        hour = today.getHours();
+
+    if (temp_wait === null) {
+        temp_wait = hour;
         if (timeOfDay === 'morning') {
             greeting.textContent = (`С чудестным утром, ${name.textContent.trim()}`);
             document.body.style.backgroundImage = `url(${backgrnds[hour]})`;
@@ -80,8 +82,8 @@ function setGreetBgrnd() {
             greeting.textContent = (`Доброй ночи, ${name.textContent.trim()}`);
             document.body.style.backgroundImage = `url(${backgrnds[hour]})`;
         }
-    } else if (temp_hour < hour) {
-        temp_hour = null;
+    } else if (temp_wait < hour) {
+        temp_wait = null;
     }
 }
 
@@ -181,8 +183,8 @@ function setFocus(e) {
         localStorage.setItem('focus', e.target.innerText);
         focus.blur();
         getFocus();
-        } else if (e.which == '0')  {
-            focus.textContent = localStorage.getItem('focus');
+    } else if (e.which == '0') {
+        focus.textContent = localStorage.getItem('focus');
     }
 }
 
@@ -200,16 +202,15 @@ function clearInputs() {
 }
 
 function nextImage() {
-    let today = new Date(),
-    hour = today.getSeconds();
-    for (let index = 0; index < backgrnds.length; index++) {
-        document.body.style.backgroundImage = `url(${backgrnds[hour]})`;
-        if (index = 23){
-            index = 0;
-        }
+
+    backgrndChanger += 1;
+    document.body.style.backgroundImage = `url(${backgrnds[backgrndChanger]})`;
+    if (backgrndChanger === 23) {
+        backgrndChanger = 0;
     }
-    
+
 }
+
 
 function main() {
     getWeather();
