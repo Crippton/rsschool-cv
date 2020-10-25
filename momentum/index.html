@@ -8,17 +8,31 @@
   <title>Make your dreams come true!</title>
 </head>
 <body>
-  <time id="time"></time>
+  <div class="weather_block">
+    <div class="weather">
+      <div class="weather_degree"></div>
+      <div class="weather_icon"></div>
+      <div class="weather_city"></div>
+    </div>
+  </div>
+  <div class="getInfo content_hide">
+    <h1 id="name" contenteditable="true" spellcheck="false">Какое твоё имя?</h1>
+    <h1 id="age" contenteditable="true" spellcheck="false">Сколько тебе лет?</h1>
+  </div> 
+  <div class="main_wrapper">
+    <time id="time"></time>
   <date id="date"></date>
   <h1>
     <span id="greeting"></span>
-    <span id="name" contenteditable="true"></span>
   </h1>
-  <h2>Какая твоя цель на сегодня?</h2>
-  <h2 id="focus" contenteditable="true"></h2>
-
-  <h2 id="quote">Умный мысль</h2>
-  <h3 id="quote_author">Вася Пупкин</h3>
+  <!-- <h2>Какая твоя цель на сегодня?</h2> -->
+  <h2 id="focus" contenteditable="true">Какая твоя цель на сегодня?</h2>
+  <div class="quote">
+    <h3 id="quote"></h3>
+    <h3 id="quote_author"></h3>
+  </div>
+  </div>
+ 
   <script src="script.js"></script>
 </body>
 </html>
