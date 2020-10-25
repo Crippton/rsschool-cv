@@ -8,14 +8,17 @@ const time = document.getElementById('time'),
     focus = document.getElementById('focus'),
     quote = document.getElementById('quote'),
     quote_author = document.getElementById('quote_author'),
-    quoteUrl = 'https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=ru',
+    quoteUrl = 'http://cors-anywhere.herokuapp.com/http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=ru',
     weather_icon = document.querySelector('.weather_icon'),
     weather_degree = document.querySelector('.weather_degree'),
     weather_city = document.querySelector('.weather_city'),
     weather_description = document.querySelector('.weather_description'),
+    weather_wind = document.querySelector('.weather_wind'),
+    weather_humidity = document.querySelector('.weather_humidity'),
     getInfo = document.querySelector('.getInfo'),
     main_wrapper = document.querySelector('.main_wrapper'),
-    newBackgr = document.getElementById('newBackgr');
+    newBackgr = document.getElementById('newBackgr'),
+    quote_new = document.getElementById('quote_new');
 
 let backgrnds = [];
 let timeOfDay = 'default';
@@ -64,26 +67,35 @@ function addZero(n) {
 
 
 function setGreetBgrnd() {
+
+    setGreets();
     let today = new Date(),
         hour = today.getHours();
-
     if (temp_wait === null) {
         temp_wait = hour;
         if (timeOfDay === 'morning') {
-            greeting.textContent = (`С чудестным утром, ${name.textContent.trim()}`);
             document.body.style.backgroundImage = `url(${backgrnds[hour]})`;
         } else if (timeOfDay === 'day') {
-            greeting.textContent = (`Хорошего дня, ${name.textContent.trim()}`);
             document.body.style.backgroundImage = `url(${backgrnds[hour]})`;
         } else if (timeOfDay === 'evening') {
-            greeting.textContent = (`Добрый вечер, ${name.textContent.trim()}`);
             document.body.style.backgroundImage = `url(${backgrnds[hour]})`;
         } else {
-            greeting.textContent = (`Доброй ночи, ${name.textContent.trim()}`);
             document.body.style.backgroundImage = `url(${backgrnds[hour]})`;
         }
     } else if (temp_wait < hour) {
         temp_wait = null;
+    }
+}
+
+function setGreets() {
+    if (timeOfDay === 'morning') {
+        greeting.textContent = (`С чудестным утром, ${name.textContent}`);
+    } else if (timeOfDay === 'day') {
+        greeting.textContent = (`Хорошего дня, ${name.textContent}`);
+    } else if (timeOfDay === 'evening') {
+        greeting.textContent = (`Добрый вечер, ${name.textContent}`);
+    } else {
+        greeting.textContent = (`Доброй ночи, ${name.textContent}`);
     }
 }
 
@@ -115,19 +127,38 @@ async function getQuote() {
 
 
 async function getWeatherAPI() {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${weather_city.textContent}&lang=ru&appid=b2ef945a1488bd848d7b2ca31e51f381&units=metric`;
-    const res = await fetch(url);
-    const data = await res.json();
+    try {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${weather_city.textContent}&lang=ru&appid=b2ef945a1488bd848d7b2ca31e51f381&units=metric`;
+        const res = await fetch(url);
+        const data = await res.json();
 
-    weather_icon.classList.add(`owf-${data.weather[0].id}`);
-    weather_degree.textContent = `${data.main.temp}°C`;
-    weather_description.textContent = data.weather[0].description;
+
+
+        weather_icon.classList.add(`owf-${data.weather[0].id}`);
+        weather_degree.textContent = `${data.main.temp}°C`;
+        weather_description.textContent = data.weather[0].description;
+        weather_wind.textContent = `ветер ${data.wind.speed} м\с`;
+        weather_humidity.textContent = `влажность ${data.main.humidity} %`;
+    } catch (e) {
+        throw new Error(localStorage.setItem('weather_city', 'Ошибка. Проверьте ввод города'));
+        
+    }
+
+}
+
+function weatherError() {
+    localStorage.setItem('weather_city', 'Ошибка. Проверьте ввод города');
+    weather_icon.textContent = null;
+    weather_degree.textContent = null;
+    weather_description.textContent = null;
+    weather_wind.textContent = null;
+    weather_humidity.textContent = null;
 }
 
 
 function getWeather() {
-    if (localStorage.getItem('weather_city') === null) {
-        weather_city.textContent = 'Введи город для получения погоды';
+    if ((localStorage.getItem('weather_city') === null) || (localStorage.getItem('weather_city').trim() === '')) {
+        weatherError()
     } else {
         weather_city.textContent = localStorage.getItem('weather_city');
         getWeatherAPI();
@@ -136,14 +167,17 @@ function getWeather() {
 
 function setWeatherCity(e) {
     if (e.which == 13 || e.keyCode == 13) {
-        localStorage.setItem('weather_city', e.target.textContent);
+        localStorage.setItem('weather_city', e.target.textContent.trim());
         weather_city.blur();
-        getWeatherAPI();
+        // getWeatherAPI();
+        getWeather();
     } else if (e.which == '0') {
         weather_city.textContent = 'Введи город?';
-    } else {
-        localStorage.setItem('weather_city', e.target.textContent);
+        // } else if(weather_city.textContent.trim() != '') {
+        //     localStorage.setItem('weather_city', e.target.textContent());
+        getWeather();
     }
+
 }
 
 
@@ -166,7 +200,7 @@ function setName(e) {
         name.blur();
         getName();
     } else if (e.which == '0') {
-        localStorage.getItem('name', e.target.textContent);
+        name.textContent = localStorage.getItem('name');
     }
 }
 
@@ -217,7 +251,7 @@ function main() {
     getFocus();
     getName();
 
-    setTimeout(main, 5000);
+    setTimeout(main, 10000);
 }
 
 
@@ -232,6 +266,7 @@ name.addEventListener('blur', setName);
 focus.addEventListener('keypress', setFocus);
 focus.addEventListener('blur', setFocus);
 newBackgr.addEventListener('click', nextImage);
+quote_new.addEventListener('click', getQuote);
 
 backgrndWholeDay();
 showTimeGreet();

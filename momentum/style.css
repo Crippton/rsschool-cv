@@ -67,7 +67,7 @@ body {
   padding: 2% 0;
 
   background: rgba(0,0,0,0.2);
-  border-radius: 100px;
+  border-radius: 20px;
   opacity: 0.85;
 }
 
@@ -142,9 +142,54 @@ h3 {
   font-size: 26px;
   color: lightblue;
 }
+#quote_new{
+  padding-right: 70%;
+  padding-bottom: 1%;
+  color: bisque;
+  cursor: pointer;
+}
 
-@media (max-width: 700px) {
-  .time {
-    font-size: 6rem;
+@media (max-width: 767px) {
+  #time {
+    font-size: 200%;
+  }
+  #date{
+    font-size: 100%;
+  }
+  #greeting{
+    font-size: 100%;
+  }
+  h2 {
+    font-size: 200%;
+  }
+  h3{
+    font-size: 100%;
+  }
+  #focus {
+    font-size: 100%;
+  }
+  #quote{
+    font-size: 100%;
+  }
+  #quote_new{
+    padding-right: 0%;
+    font-size: 100%;
+    color: lightsalmon;
+  }
+  .quote{
+    border-radius: 50px;
+  }
+  .weather{
+    position: inherit;
+    background: transparent;
+    font-size: 90%;
+    max-width: 43%;
+    margin-bottom: 100%;
+
+    width: 100%;
+    max-width: 138px;
+  }
+  #newBackgr{
+    top: 15%;
   }
 }
