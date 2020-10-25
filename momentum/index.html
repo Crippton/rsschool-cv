@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../momentum/assets/css/owfont-regular.css">
   <link rel="stylesheet" href="style.css" />
   <title>Make your dreams come true!</title>
 </head>
+
 <body>
-  <div class="weather_block">
-    <div class="weather">
-      <div class="weather_degree"></div>
-      <div class="weather_icon"></div>
-      <div class="weather_city"></div>
+
+
+  <div class="getInfo content_hide">
+    <h1 id="name" contenteditable="true" spellcheck="false"></h1>
+    <!-- <h1 id="age" contenteditable="true" spellcheck="false"></h1> -->
+  </div>
+  <div class="main_wrapper">
+    <div class="weather_block">
+      <div class="weather">
+        <h2 class="weather_city" contenteditable="true"></h2>
+        <div class="weather_degree"></div>
+        <div class="weather_icon owf owf-3x"></div>
+        <div class="weather_description"></div>
+      </div>
+    </div>
+  <div id="newBackgr">
+    <h2></h2>
+  </div>
+
+    <time id="time"></time>
+    <date id="date"></date>
+    <h1>
+      <span id="greeting"></span>
+    </h1>
+    <!-- <h2>Какая твоя цель на сегодня?</h2> -->
+    <h2 id="focus" contenteditable="true" spellcheck="false"></h2>
+    <div class="quote">
+      <h3 id="quote"></h3>
+      <h3 id="quote_author"></h3>
     </div>
   </div>
-  <div class="getInfo content_hide">
-    <h1 id="name" contenteditable="true" spellcheck="false">Какое твоё имя?</h1>
-    <h1 id="age" contenteditable="true" spellcheck="false">Сколько тебе лет?</h1>
-  </div> 
-  <div class="main_wrapper">
-    <time id="time"></time>
-  <date id="date"></date>
-  <h1>
-    <span id="greeting"></span>
-  </h1>
-  <!-- <h2>Какая твоя цель на сегодня?</h2> -->
-  <h2 id="focus" contenteditable="true">Какая твоя цель на сегодня?</h2>
-  <div class="quote">
-    <h3 id="quote"></h3>
-    <h3 id="quote_author"></h3>
-  </div>
-  </div>
- 
+
   <script src="script.js"></script>
 </body>
+
 </html>

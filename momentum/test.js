@@ -75,6 +75,9 @@ function setName(e) {
       name.blur();
     }
   } else {
+    if (e.target.innerText.length = 0) {
+      
+    }
     localStorage.setItem('name', e.target.innerText);
   }
 }

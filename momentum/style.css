@@ -17,6 +17,8 @@ body {
   background-size: cover;
   color: #fff;
   background-image: url('../momentum/assets/images/day/03.jpg');
+
+  transition: background-image 1s ease-in-out;
 }
 .main_wrapper{
   display: flex;
@@ -31,20 +33,52 @@ body {
 }
 
 .getInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 35%;
+  top: 40%;
+  max-width: 35%;
+  width: 100%;
+
+  background: rgba(0,0,0,0.2);
+  border-radius: 100px;
+  opacity: 0.85;
+}
+.getInfo h1 {
+  margin: 2%;
 }
 
 .name, .age {
   opacity: 0;
   font-size: 32px;
 }
+.weather{
+  position: absolute;
+  right: 2%;
+  top: 5%;
+  max-width: 15%;
+  width: 100%;
+
+  padding: 2% 0;
+
+  background: rgba(0,0,0,0.2);
+  border-radius: 100px;
+  opacity: 0.85;
+}
 
 .weather_block{
   display: flex;
   align-items: flex-start ;
 }
+.weather_city{
+  margin-bottom: 0;
+}
+
 #time {
   font-size: 600%;
   /* text-shadow: 1px 1px 2px black, 0 0 1em aquamarine; */
@@ -65,12 +99,37 @@ h2 {
 h3 {
   padding: 0px 35px;
 }
+#focus {
+  max-width: 55%;
+  width: 100%;
+  opacity: 0.76;
+  margin-top: 10%;
+  font-size: 32px;
+
+  border-bottom: honeydew solid 1px;
+  border-radius: 10px;
+  /* opacity: 0.75; */
+}
+
+#newBackgr {
+  position: absolute;
+  right: 2%;
+  top: 85%;
+  cursor: pointer;
+  
+  width: 4em;
+  height: 4em;
+  /* color: goldenrod; */
+  background: url("https://www.pngarts.com/files/7/Update-Button-PNG-Image.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 .quote{
   background: rgba(0,0,0,0.2);
   max-width: 100%;
   width: 80%;
   border-radius: 100px;
-  margin-top: 20%;
+  margin-top: 8%;
   opacity: 0.85;
 }
 
